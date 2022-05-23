@@ -2,6 +2,14 @@
 
 describe("Preenchendo formulário", () => {
 
+    it("Preechendo formulário", () => {
+        cy.visit("https://automacaocombatista.herokuapp.com/buscaelementos/inputsetextfield");
+        cy.get('#first_name').type("Diego");
+        cy.get('#first_name').should('have.value','Diego')
+        cy.get("#last_name").type("Brito")
+        cy.get("#last_name").should('have.value',"Brito")
+    });
+
     it("Preenchendo formulário correto", () =>{
         cy.visit("https://automacaocombatista.herokuapp.com/users/new");
         cy.get('#user_name').type("Diego");
